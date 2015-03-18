@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  exercisable_id: 1
+  exercisable_type: MyString
+
+two:
+  email: MyString
+  exercisable_id: 1
+  exercisable_type: MyString
