@@ -1,0 +1,51 @@
+[{
+	"User":
+	[{
+		"Name": "Laxmi Kasaraneni",
+		"DOB_Month": 10,
+		"DOB_Day": 10,
+		"DOB_Year": 1991,
+		"email": "lkasaraneni@gmail.com",
+		"admin": 0,
+		"created_at": "2015-03-19 03:37:41",
+		"updated_at": "2015-03-19 03:37:41",
+		"group_ids": [2,4,6]
+	},
+	{
+		"Name": "Anand Kesavaraju",
+		"DOB_Month": 1,
+		"DOB_Day": 25,
+		"DOB_Year": 1990,
+		"email": "anand.kesavaraju@gmail.com",
+		"admin": 0,
+		"created_at": "2015-03-29 03:37:41",
+		"updated_at": "2015-03-29 03:37:41",
+		"group_ids": [1,3,5]
+	}]
+},
+{
+	"User":
+	[{
+		"Name": "Laxmi Kasaraneni",
+		"DOB_Month": 10,
+		"DOB_Day": 10,
+		"DOB_Year": 1991,
+		"email": "lkasaraneni@gmail.com",
+		"admin": 0,
+		"created_at": "2015-03-19 03:37:41",
+		"updated_at": "2015-03-19 03:37:41",
+		"group_ids": [2,4,6]
+	},
+	{
+		"Name": "Anand Kesavaraju",
+		"DOB_Month": 1,
+		"DOB_Day": 25,
+		"DOB_Year": 1990,
+		"email": "anand.kesavaraju@gmail.com",
+		"admin": 0,
+		"created_at": "2015-03-29 03:37:41",
+		"updated_at": "2015-03-29 03:37:41",
+		"group_ids": [1,3,5]
+	}]
+}]
+
