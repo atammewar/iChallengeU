@@ -47,11 +47,16 @@ def timeStamp(DateTime):
 
     return [Month, Day, Year, Hour, Minute, Second]
 
+FullJSONString = ''
+
 with open('RawGoogleDriveData.csv', 'rb') as csvfile:
     spamreader = csv.reader(csvfile, delimiter=',')
-    BikeJSON = '';
+    BikeJSON = ''
+    RunJSON = ''
+    WeightsJSON = ''
     tempBikeCounter = 0 
-    tempRunCounter = 0  
+    tempRunCounter = 0
+    tempWeightsCounter = 0
     
     # Start with Bike Records
     for row in spamreader:
@@ -83,11 +88,62 @@ with open('RawGoogleDriveData.csv', 'rb') as csvfile:
                 BikeJSON = BikeJSON + ', ' + tempBikeString;
 
         elif row[1] == 'Run':
-            ## Run code here
+            # Split the Date into Month, Day, Year,
+            # Hour, Minute, Second:
+            DateTime = row[0].split( );
+            [Month, Day, Year, Hour, Minute, Second] = timeStamp(DateTime)
+            
+            # Check the Names, we want to use Full Names: (?)
+            Name = row[2];
+            Name = FullName(Name);
+            
+            # Convert Exercised Time to seconds:
+            timeInSec = 0;
+            temp = row[3].split(':');
+            timeInSec = int(temp[0])*3600 + int(temp[1])*60 + int(temp[2]);
+            
+            # Convert Distance to float
+            Distance = float(row[4]);
+            
+            # Now, build JSON string:
+            tempRunString = json.dumps({"User": Name, "Time": timeInSec, "Distance": Distance, "Day": Day, "Month": Month, "Year": Year, "Hour": Hour, "Minute": Minute, "Second": Second}, sort_keys=True, indent=4, separators=(',', ': '))
+            
+            if (tempRunCounter == 0):
+                RunJSON = tempRunString;
+                tempRunCounter = 1;
+            else:
+                RunJSON = RunJSON + ', ' + tempRunString;
 
-        ## elif row[1] = <other activity>
+        elif row[1] == 'Weights':
+            # Split the Date into Month, Day, Year,
+            # Hour, Minute, Second:
+            DateTime = row[0].split( );
+            [Month, Day, Year, Hour, Minute, Second] = timeStamp(DateTime)
+            
+            # Check the Names, we want to use Full Names: (?)
+            Name = row[2];
+            Name = FullName(Name);
+            
+            # Convert Exercised Time to seconds:
+            timeInSec = 0;
+            temp = row[10].split(':');
+            timeInSec = int(temp[0])*3600 + int(temp[1])*60 + int(temp[2]);
+            
+            
+            # Now, build JSON string:
+            tempWeightsString = json.dumps({"User": Name, "Time": timeInSec, "Day": Day, "Month": Month, "Year": Year, "Hour": Hour, "Minute": Minute, "Second": Second}, sort_keys=True, indent=4, separators=(',', ': '))
+            
+            if (tempWeightsCounter == 0):
+                WeightsJSON = tempWeightsString;
+                tempWeightsCounter = 1;
+            else:
+                WeightsJSON = WeightsJSON + ', ' + tempWeightsString;
                 
-BikeJSON = '[' + BikeJSON + ']';
+BikeJSON = '[' + BikeJSON + ']'
+RunJSON = '[' + RunJSON + ']'
+WeightsJSON = '[' + WeightsJSON + ']'
 
-f = open('BikeJSON.txt', 'w+')
-f.write(BikeJSON);
+FullJSONString = '{' + '"Bike": ' +  BikeJSON + ',' + '"Run": ' + RunJSON + ',' + '"Weights":' + WeightsJSON + '}'
+
+f = open('FullJSON.txt', 'w+')
+f.write(FullJSONString);
