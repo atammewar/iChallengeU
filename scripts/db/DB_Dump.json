@@ -34,51 +34,6 @@
         "email": "rvoleti89@gmail.com",
         "admin": 0
     }],
-    "BikeRecords": 
-    [{
-        "User": "Anand Kesavaraju",
-        "Time": 300,
-        "Distance": 1.5,
-        "Day": 1,
-        "Month": 2,
-        "Year": 2015,
-        "Hour": 1,
-        "Minute": 2,
-        "Second": 3
-    },
-    {
-        "User": "Shakuntala Aunty",
-        "Time": 350,
-        "Distance": 0.2,
-        "Day": 1,
-        "Month": 2,
-        "Year": 2015,
-        "Hour": 1,
-        "Minute": 2,
-        "Second": 3
-    }],
-    "WeightRecords": 
-    [{
-        "User": "Shakuntala Aunty",
-        "Time": 300,
-        "Day": 1,
-        "Month": 2,
-        "Year": 2015,
-        "Hour": 1,
-        "Minute": 2,
-        "Second": 3
-    },
-    {
-        "User": "Anand Kesavaraju",
-        "Time": 250,
-        "Day": 1,
-        "Month": 2,
-        "Year": 2015,
-        "Hour": 1,
-        "Minute": 2,
-        "Second": 3
-    }],
-
     "Bike": [{
     "Day": 7,
     "Distance": 6.86,
