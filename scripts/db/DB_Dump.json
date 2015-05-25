@@ -1,36 +1,36 @@
 {"User":
     [{
-        "Name": "Aditya Ponnaluri",
+        "name": "Aditya Ponnaluri",
         "email": "aditya.ponnaluri@gmail.com",
         "admin": 1
     },
     {
-        "Name": "Anand Kesavaraju",
+        "name": "Anand Kesavaraju",
         "email": "anand.kesavaraju@gmail.com",
         "admin": 0
     },
     {
-        "Name": "Aditya Tammewar",
+        "name": "Aditya Tammewar",
         "email": "atammewar@gmail.com",
         "admin": 1
     },
     {
-        "Name": "Vivek Voleti",
+        "name": "Vivek Voleti",
         "email": "vivekvoleti@gmail.com",
         "admin": 1
     },
     {
-        "Name": "Laxmi Kasaraneni",
+        "name": "Laxmi Kasaraneni",
         "email": "lkasaraneni@gmail.com",
         "admin": 0
     },
     {
-        "Name": "Anusha Devareddy",
+        "name": "Anusha Devareddy",
         "email": "anusha.devareddy@gmail.com",
         "admin": 0
     },
     {
-        "Name": "Rohit Voleti",
+        "name": "Rohit Voleti",
         "email": "rvoleti89@gmail.com",
         "admin": 0
     }],
