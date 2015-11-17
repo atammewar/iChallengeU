@@ -11,29 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150310215250) do
+ActiveRecord::Schema.define(version: 20151115185656) do
 
   create_table "bike_records", force: :cascade do |t|
     t.integer  "duration",   limit: 4
-    t.decimal  "distance",             precision: 10
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.decimal  "distance",             precision: 12, scale: 7
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "exercises", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
     t.integer  "actable_id",   limit: 4
     t.string   "actable_type", limit: 255
-    t.integer  "score",        limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.decimal  "score",                    precision: 12, scale: 7
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
   end
 
   create_table "run_records", force: :cascade do |t|
     t.integer  "duration",   limit: 4
-    t.decimal  "distance",             precision: 10
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.decimal  "distance",             precision: 12, scale: 7
+    t.datetime "created_at",                                    null: false
+    t.datetime "updated_at",                                    null: false
   end
 
   create_table "users", force: :cascade do |t|

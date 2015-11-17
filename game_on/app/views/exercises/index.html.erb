@@ -1,0 +1,29 @@
+<div class="exercises index">
+  <h2>Exercises</h2>
+
+  <%= link_to("Add New Exercise", '#', :class => 'action new') %>
+
+  <table class="listing" summary="Exercise list">
+    <tr class="header">
+      <th>Name</th>
+      <th>Exercise</th>
+      <th>Score</th>
+      <th>Actions</th>
+    </tr>
+    <% @exercises.each do |ex| %>
+      <tr>
+	<td><%= ex.user.name %></td>
+	<td class="center"><%= ex.actable_type[0..-7] %></td>
+	<td class="center"><%= ex.score.round(2) %> </td>
+	<td class="actions">
+	  <%= link_to("Show", '#', :class => 'action show') %>
+	  <%= link_to("Edit", '#', :class => 'action edit') %>
+	  <%= link_to("Delete", '#', :class => 'action delete') %>
+	</td>
+       </tr>
+     <% end %>
+   </table>
+   <%= will_paginate @exercises %>
+ </div>
+
+
