@@ -19,8 +19,7 @@ task :import => :environment do
       user = User.find_by_name(b['User'])
       duration = b['Time']
       distance = b['Distance']
-      score    = (duration * bike_duration_multiplier) + (distance * bike_distance_multiplier)
-      newRecord = BikeRecord.create(:duration => duration, :distance => distance, :score => score)
+      newRecord = BikeRecord.create(:duration => duration, :distance => distance)
       user.exercises << newRecord
    end
 
@@ -32,8 +31,7 @@ task :import => :environment do
       user = User.find_by_name(r['User'])
       duration = r['Time']
       distance = r['Distance']
-      score    = (duration * run_duration_multiplier) + (distance * run_distance_multiplier)
-      newRecord = RunRecord.create(:duration => duration, :distance => distance, :score => score)
+      newRecord = RunRecord.create(:duration => duration, :distance => distance)
       user.exercises << newRecord
    end
 
@@ -43,8 +41,7 @@ task :import => :environment do
    weights.each do |w|
       user = User.find_by_name(w['User'])
       duration = w['Time']
-      score    = duration * weight_duration_multiplier
-      newRecord = WeightRecord.create(:duration => duration, :score => score)
+      newRecord = WeightRecord.create(:duration => duration)
       user.exercises << newRecord
    end
 end
